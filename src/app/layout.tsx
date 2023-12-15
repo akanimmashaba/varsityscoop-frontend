@@ -15,8 +15,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className='flex h-screen'>
+        <div className='flex-none w-3/12 bg-gray-200 p-4 hidden md:block'>
+        navbar
+        </div>
+        <div className='flex-1 p-4 overflow-y-auto max-h-screen' >
+          
+            {children}
+        
+        </div>
+        <div className='flex-none w-3/12 bg-gray-200 p-4 hidden lg:block'>
+          profile
+        </div>
+        
+        
+        </body>
     </html>
   )
 }
